@@ -1,0 +1,12 @@
+name: TH_BigData_Lab1
+services:
+  spark:
+    image: quay.io/jupyter/pyspark-notebook:spark-4.2.0
+    container_name: TH_BigData_Lab1
+    ports:
+      - "8889:8888"   # Jupyter  -> http://localhost:8889
+      - "4041:4040"   # Spark UI -> http://localhost:4041
+    volumes:
+      - ./:/home/jovyan/work
+    environment:
+      - JUPYTER_TOKEN=bigdata

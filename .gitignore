@@ -1,0 +1,8 @@
+# .gitignore
+data/*
+!data/README.md
+*.zip
+.ipynb_checkpoints/
+spark-warehouse/
+metastore_db/
+derby.log
