@@ -10,3 +10,6 @@ services:
       - ./:/home/jovyan/work
     environment:
       - JUPYTER_TOKEN=bigdata
+      # Cho `docker exec ... python/jupyter nbconvert` import được pyspark:
+      # image chỉ đặt PYTHONPATH này trong hook khởi động Jupyter, docker exec không chạy hook đó.
+      - PYTHONPATH=/usr/local/spark/python/lib/py4j-0.10.9.9-src.zip:/usr/local/spark/python
